@@ -4,7 +4,7 @@ In this project, a mobile robot is asked to navigate to a pick-up zone for picki
 up a green cube. After that, it moves while carrying the cube to the drop-off
 zone position and drops the cube there.
 
-<img src="https://github.com/AnkushKansal/Home-Service-Bot/blob/master/Images/Towards Destination.PNG  width="700" height="400"></a>
+<img src="https://github.com/AnkushKansal/Home-Service-Bot/blob/master/TowardsDestination.PNG"  width="700" height="400" />
 
 ## How it works
 The mobile robot first drives around and scan the house using laser for generating 
