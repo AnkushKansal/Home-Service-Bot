@@ -71,6 +71,9 @@ $ ./test_slam.sh
 
 Several windows will automatically open (this may take a few seconds). You will see the robot in Rviz in what looks like a fairly blank map. To operate the robot, click on the window for the `keyboard_teleop` node, and follow the commands there. As the robot moves around the world, the map will begin to appear in Rviz.
 
+  ##### Package used : [slam-gmapping](http://wiki.ros.org/slam_gmapping). 
+  This package is responsible for localizing the bot and mapping the environment simultaneously. It uses AMCL algorithm along with occupancy grid mapping algorithm to map.
+
 ### Part 2: Navigation
 
 The next task for the robot is navigation. To test the robot's navigation capabilities, run the `test_navigation.sh` script:
@@ -81,6 +84,8 @@ $ ./test_navigation.sh
 
 Again, several windows will open (this may take a few seconds). This time you'll see the robot in a completed map in Rviz. Click the "2D Nav Goal" button and click/drag somewhere on the map to command the robot. The robot will find a path to the goal location and follow it.
 
+Navigation is performed by Dijkstra Algorithm which is a variant of uniform path cost search method.
+
 ### Part 3: Full Service
 
 Now that the world is mapped and the robot can follow commands, the robot can be instructed to pick up and drop off a simulated object at different waypoints. To do this, run the `home_service.sh` script:
@@ -90,3 +95,6 @@ $ ./home_service.sh
 ```
 
 An item (represented by a green cube) will show up in Rviz. The robot will navigate to the item, at which point it will disappear (indicating it has been picked up), and then the robot will navigate to another point and drop off the item, at which point the item will reappear.
+
+### Overall packages used
+The ros-perception/slam_gmapping package performs laser based SLAM, Simultaneous Location And Mapping. A 2D occupancy grid map is created using the laser data and turtlebot robot (turtlebot package) pose data as it moves through an environment, which the user can do using the keyboard_teleop package. From a given map created by the SLAM package, the AMCL package is used to localise the robot within the environment using a adaptive particle filter. The navigation package can be given a goal and will use the odometry(from AMCL) and other sensor information to navigate to a given goal. As usual the RVIZ package is used to visualise everything.
