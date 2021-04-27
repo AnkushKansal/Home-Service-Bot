@@ -4,7 +4,7 @@ In this project, a mobile robot is asked to navigate to a pick-up zone for picki
 up a green cube. After that, it moves while carrying the cube to the drop-off
 zone position and drops the cube there.
 
-<img src="https://github.com/AnkushKansal/Home-Service-Bot/blob/master/Images/Towards Destination.PNG  width="700" height="400"></a>
+<img src="https://github.com/AnkushKansal/Home-Service-Bot/blob/master/TowardsDestination.PNG"  width="700" height="400" />
 
 ## How it works
 The mobile robot first drives around and scan the house using laser for generating 
@@ -90,11 +90,3 @@ $ ./home_service.sh
 ```
 
 An item (represented by a green cube) will show up in Rviz. The robot will navigate to the item, at which point it will disappear (indicating it has been picked up), and then the robot will navigate to another point and drop off the item, at which point the item will reappear.
-
-## Final Words
-
-This project is the final project of Udacity Robotics Software Engineer Nanodegree,
-in which the following knowledge are combined:
-* Apply and fine tune the AMCL algorithm.
-* Apply and fine tune cost map and trajectory planner of move_base ROS package.
-* Write ROS nodes with publishers and subscribers
